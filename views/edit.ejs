@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Create Product</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Editar Producto</h1>
+        <form action = "/products/edit/<%= productFound.id %>" method = "POST"><br>
+            <p>ID: <%= productFound.id %></p>
+            <input type="text" name = "nombre" value="<%= productFound.nombre %>"><br>
+            <input type= "text" name = "precio" value="<%= productFound.precio %>"><br>
+            <input type= "text" name = "descripcion" value="<%= productFound.descripcion %>"><br>
+            <input type= "text" name = "marca" value="<%= productFound.marca %>"><br>
+            <input type= "text" name = "stock" value="<%= productFound.stock %>"><br>
+            <button type="submit">Editar Producto</button>
+        </form>
+    </body>
+</html>
