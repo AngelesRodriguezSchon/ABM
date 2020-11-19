@@ -27,17 +27,17 @@ const productsController = {
         }
     },
     update: function (req,res,next){
-        var productFound = req.params.id;
+        var idProduct = req.params.id;
         var editProducts = products.map(function(product){
-            if(product.id == productFound){
+            if(product.id == idProduct){
                 let productEditado = req.body;
-                productEditado.id = productFound;
+                productEditado.id = idProduct;
                 return productEditado;
             }
         });
         editProductsJSON=JSON.stringify(editProducts);
         fs.writeFileSync(__dirname + "/../database/products.json", editProductsJSON);
-        res.render ("edit", {productFound});
+        res.redirect( idProduct);
     },
     destroy: function(req,res,next){
         var idProduct = req.params.id;
